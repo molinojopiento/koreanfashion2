@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<title>PhotoSwipe</title>
+	<meta name="author" content="Ste Brennan - Code Computerlove - http://www.codecomputerlove.com/" />
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	
+	<link href="js/jquery.mobile-1.0rc2.min.css" rel="stylesheet" />
+	<link href="jquery-mobile.css" type="text/css" rel="stylesheet" />
+	<link href="photoswipe.css" type="text/css" rel="stylesheet" />
+    <link href="styles.css" type="text/css" rel="stylesheet" />
+	
+      <script src="js/load-json.js"></script>
+      <script src="js/jquery-1.5.min.js"></script>
+       <script src="js/cordova-1.7.0.js"></script>
+	<script type="text/javascript" src="klass.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.0rc2.min.js"></script>
+	<script type="text/javascript" src="code.photoswipe.jquery-3.0.4.min.js"></script>
+
+	<script type="text/javascript">
+		
+		/*
+		 * IMPORTANT!!!
+		 * REMEMBER TO ADD  rel="external"  to your anchor tags. 
+		 * If you don't this will mess with how jQuery Mobile works
+		 */
+		
+		(function(window, $, PhotoSwipe){
+			
+			$(document).ready(function(){
+				
+				$('div.gallery-page')
+					.live('pageshow', function(e){
+						
+						var 
+							currentPage = $(e.target),
+							options = {},
+							photoSwipeInstance = $("ul.gallery a", e.target).photoSwipe(options,  currentPage.attr('id'));
+							
+						return true;
+						
+					})
+					
+					.live('pagehide', function(e){
+						
+						var 
+							currentPage = $(e.target),
+							photoSwipeInstance = PhotoSwipe.getInstance(currentPage.attr('id'));
+
+						if (typeof photoSwipeInstance != "undefined" && photoSwipeInstance != null) {
+							PhotoSwipe.detatch(photoSwipeInstance);
+						}
+						
+						return true;
+						
+					});
+				
+			});
+		
+		}(window, window.jQuery, window.Code.PhotoSwipe));
+
+</script>
+
+	
+</head>
+<body onload="loadData()">
+
+<div data-role="page" id="Home">
+
+	<div id="Header">
+	<a href="http://www.codecomputerlove.com"><img src="images/codecomputerlovelogo.gif" width="286" height="79" alt="Code Computerlove" /></a>
+</div>
+	
+	
+	<div data-role="content" >	
+		<ul class="menusin">
+			<li><a href="#Gallery1"><img src="logo/galeria.png" align="left"width="222" height="108"  /></a></li>
+			<li><a href="#Gallery2"><img src="logo/galeriaonline.png" align="left"width="229" height="108"  /></a></li> 
+		</ul> 
+		
+
+	</div>
+
+	<div id="Footer">
+	<p><small> V1.0&copy; 2012 MolinoMobile - Developer , Chile.</small></p>
+
+	<div id="SocialLinks" >
+		
+		<a href="http://www.twitter.com/molinojopiento"><img src="images/twittericon.png" width="32" height="32" alt="Twitter" /></a>
+		<a href="http://www.facebook.com/molinojopiento"><img src="images/facebookicon.png" width="32" height="32" alt="Facebook" /></a>
+        	<a href="http://molino.coolpage.biz/"><img src="images/blogicon.png" width="32" height="32" alt="Website" /></a>
+		
+	</div>
+	
+</div>
+
+</div>
+
+
+<div data-role="page" data-add-back-btn="true" id="Gallery1" class="gallery-page">
+
+	<div data-role="header">
+		<h1>Gallery Offline</h1>
+	</div>
+
+	<div data-role="content">	
+		
+		<ul class="gallery">
+		
+			
+		<li><a href="images/full/001.jpg" rel="external"><img src="images/thumb/001.jpg" </a></li>
+		<li><a href="images/full/002.jpg" rel="external"><img src="images/thumb/002.jpg" </a></li>
+		<li><a href="images/full/003.jpg" rel="external"><img src="images/thumb/003.jpg" </a></li>
+		<li><a href="images/full/004.jpg" rel="external"><img src="images/thumb/004.jpg" </a></li>
+		<li><a href="images/full/005.jpg" rel="external"><img src="images/thumb/005.jpg" </a></li>
+		<li><a href="images/full/006.jpg" rel="external"><img src="images/thumb/006.jpg" </a></li>
+		<li><a href="images/full/007.jpg" rel="external"><img src="images/thumb/007.jpg" </a></li>
+		<li><a href="images/full/008.jpg" rel="external"><img src="images/thumb/008.jpg" </a></li>
+		<li><a href="images/full/009.jpg" rel="external"><img src="images/thumb/009.jpg"</a></li>
+		<li><a href="images/full/010.jpg" rel="external"><img src="images/thumb/010.jpg" </a></li>
+		<li><a href="images/full/011.jpg" rel="external"><img src="images/thumb/011.jpg" </a></li>
+		<li><a href="images/full/012.jpg" rel="external"><img src="images/thumb/012.jpg" </a></li>
+		<li><a href="images/full/013.jpg" rel="external"><img src="images/thumb/013.jpg" </a></li>
+		<li><a href="images/full/014.jpg" rel="external"><img src="images/thumb/014.jpg" </a></li>
+		<li><a href="images/full/015.jpg" rel="external"><img src="images/thumb/015.jpg" </a></li>
+		<li><a href="images/full/016.jpg" rel="external"><img src="images/thumb/016.jpg" </a></li>
+		<li><a href="images/full/017.jpg" rel="external"><img src="images/thumb/017.jpg" </a></li>
+		<li><a href="images/full/018.jpg" rel="external"><img src="images/thumb/018.jpg" </a></li>
+        <li><a href="images/full/018.jpg" rel="external"><img src="images/thumb/018.jpg"</a></li>
+		<li><a href="images/full/019.jpg" rel="external"><img src="images/thumb/019.jpg" </a></li>
+		<li><a href="images/full/020.jpg" rel="external"><img src="images/thumb/020.jpg" </a></li>
+		<li><a href="images/full/021.jpg" rel="external"><img src="images/thumb/021.jpg" </a></li>
+		<li><a href="images/full/022.jpg" rel="external"><img src="images/thumb/022.jpg" </a></li>
+        <li><a href="images/full/023.jpg" rel="external"><img src="images/thumb/023.jpg" </a></li>
+        <li><a href="images/full/024.jpg" rel="external"><img src="images/thumb/024.jpg" </a></li>
+        <li><a href="images/full/025.jpg" rel="external"><img src="images/thumb/025.jpg" </a></li>
+        <li><a href="images/full/026.jpg" rel="external"><img src="images/thumb/026.jpg" </a></li>
+        <li><a href="images/full/027.jpg" rel="external"><img src="images/thumb/027.jpg" </a></li>
+        <li><a href="images/full/028.jpg" rel="external"><img src="images/thumb/028.jpg" </a></li>
+        <li><a href="images/full/029.jpg" rel="external"><img src="images/thumb/029.jpg" </a></li>
+        <li><a href="images/full/030.jpg" rel="external"><img src="images/thumb/030.jpg" </a></li>
+        <li><a href="images/full/030.jpg" rel="external"><img src="images/thumb/031.jpg" </a></li>
+			
+			
+			
+            
+			
+		</ul>
+		
+	</div>
+	
+<div id="Footer">
+	<p><small> V1.0&copy; 2012 MolinoMobile - Developer , Chile.</small></p>
+
+	<div id="SocialLinks" >
+		
+		<a href="http://www.twitter.com/molinojopiento"><img src="images/twittericon.png" width="32" height="32" alt="Twitter" /></a>
+		<a href="http://www.facebook.com/molinojopiento"><img src="images/facebookicon.png" width="32" height="32" alt="Facebook" /></a>
+        	<a href="http://molino.coolpage.biz/"><img src="images/blogicon.png" width="32" height="32" alt="Website" /></a>
+		
+	</div>
+	
+</div>
+	
+</div>
+
+<div data-role="page" data-add-back-btn="true" id="Gallery2" class="gallery-page">
+
+	<div data-role="header">
+		<h1>Gallery Online</h1>
+	</div>
+
+	<div data-role="content">	
+		
+		<ul class="gallery">
+	<div id="output"></div>
+		
+		</ul>
+		
+	</div>
+
+	<div id="Footer">
+	<p><small> V1.0&copy; 2012 MolinoMobile - Developer , Chile.</small></p>
+
+	<div id="SocialLinks" >
+		
+		<a href="http://www.twitter.com/molinojopiento"><img src="images/twittericon.png" width="32" height="32" alt="Twitter" /></a>
+		<a href="http://www.facebook.com/molinojopiento"><img src="images/facebookicon.png" width="32" height="32" alt="Facebook" /></a>
+        	<a href="http://molino.coolpage.biz/"><img src="images/blogicon.png" width="32" height="32" alt="Website" /></a>
+		
+	</div>
+	
+</div>
+</div>
+
+
+</body>
+</html>
